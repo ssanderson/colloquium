@@ -1,0 +1,149 @@
+%% Macros and packages used in my thesis.
+%% Include this file to typeset any portion...
+
+
+\usepackage{setspace}
+
+%% Special math fonts and symbols
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+%% Rotate tables and figures
+\usepackage{rotating}
+%% Used for TODO items
+\usepackage{color}
+%% used for code listings.
+\usepackage{float}
+%% Used to replace LaTeX's ugly emptyset with diameter, which looks nicer.
+\usepackage{wasysym}
+%% Nicely formatted algorithms.
+\usepackage{algorithmicx}
+\usepackage[chapter]{algorithm}
+\usepackage{algpseudocode}
+%% Nicely formatted listings.
+\usepackage{listings}
+%% More kinds of arrow with stuff
+\usepackage{empheq}
+\usepackage{multicol}
+\usepackage{subfigure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Macros                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% The name of the commandline tool.
+%%\newcommand{\HominyTool}{\texttt{hominy}}
+\newcommand{\HominyTool}{Hominy}
+\newcommand{\JG}{JG}
+
+
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+
+%% Todo items.
+%\newcommand{\todo}[1]{\textcolor{red}{\textbf{\textsf{TODO:}}} \textsf{#1}}
+
+%% Paragraph shorthand
+% \newcommand{\p}[1]{\paragraph{#1}}
+
+%% Reference a figure
+\newcommand{\fig}[1]{Figure~\ref{#1}}
+
+%% Reference a table
+\newcommand{\tab}[1]{Table~\ref{#1}}
+
+%% Code listings, algorithms
+%% \floatstyle{ruled}
+%% \newfloat{listing}{htbp}{lop}[chapter]
+%% \floatname{listing}{Listing}
+%% %\newfloat{algorithm}{htbp}{lop}
+%% %\floatname{algorithm}{Algorithm}
+%% \newfloat{example}{htbp}{lop}[chapter]
+%% \floatname{example}{Example}
+
+
+%% Reference a code listing
+%% \newcommand{\code}[1]{Listing~\ref{#1}}
+
+%% Reference an algorithm
+\newcommand{\alg}[1]{\Algorithm~\ref{#1}}
+
+%% Reference an Example.
+%% \newcommand{\ex}[1]{Example~\ref{#1}}
+
+%% Reference a chapter
+\newcommand{\ch}[1]{Chapter~\ref{#1}}
+
+%% A better empty set
+%% \renewcommand{\emptyset}{\diameter
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Theorem environments
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{definition}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{claim}{Claim}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{definition}{Definition}[section]
+\renewenvironment{proof}{{\bf Proof:}}{\hfill\rule{2mm}{2mm}}
+\newenvironment{proofsketch}{{\bf Proof Sketch:}}{\hfill\rule{2mm}{2mm}}
+
+%% #1 => label, #2 => caption
+\newenvironment{LFigure}[2]{
+\begin{figure}
+\hrule \smallskip
+\newcommand{\Caption}{\caption{#2}\label{#1}}
+\singlespacing
+}{
+\smallskip \hrule
+\Caption
+\end{figure}
+}
+\newenvironment{Figure}[2]{
+\begin{LFigure}{#1}{#2}
+\centering
+}{\end{LFigure}}
+
+\newenvironment{UFigure}[2]{
+\begin{figure}
+\newcommand{\Caption}{\caption{#2}\label{#1}}
+\singlespacing
+\centering
+}{
+\smallskip
+\Caption
+\end{figure}
+}
+\newenvironment{FigureHere}[2]{
+\begin{figure}[h]
+\hrule \smallskip
+\newcommand{\Caption}{\caption{#2}\label{#1}}
+\singlespacing
+\centering
+}{
+\smallskip \hrule
+\Caption
+\end{figure}
+}
+
+\newenvironment{PFigure}[2]{
+\begin{figure}[p]
+\hrule \smallskip
+\newcommand{\Caption}{\caption{#2}\label{#1}}
+\singlespacing
+\centering
+}{
+\smallskip \hrule
+\Caption
+\end{figure}
+}
+
+
+
+
